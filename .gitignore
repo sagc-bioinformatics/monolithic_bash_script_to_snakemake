@@ -1,0 +1,11 @@
+slurm-*.out
+mapped/
+qc_reads/
+reports/
+raw_reads/*.html
+raw_reads/*.zip
+references/*.amb
+references/*.ann
+references/*.bwt
+references/*.pac
+references/*.sa
