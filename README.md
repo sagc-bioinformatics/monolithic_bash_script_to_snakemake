@@ -136,4 +136,17 @@ The monolithic bash script ([scripts/monolithic_bash_script.sh]) performs the fo
     3. Alignes read pairs to the reference genome using BWA-mem
  3. Aggregates FastQC results
 
+## Step-1
 
+Switch to the `step-1` branch:
+
+```bash
+git checkout step-1
+```
+
+Create a file called `Snakefile`(capitalisation is important) and write a rule called `bwa_index` for performing the BWA indexing step.
+Once complete, you can execute the workflow using something like:
+
+```bash
+snakemake --profile profiles/zeus bwa_index
+```
