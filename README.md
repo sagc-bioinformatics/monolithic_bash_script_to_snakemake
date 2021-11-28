@@ -19,7 +19,7 @@ If you haven’t got those files, you need to create them.
 ```bash
 # Setup some convenient system-specific environmental variables
 export SNAKEMAKE_WORKSHOP_SHARED_DIR="/group/courses01/amsi/snakemake"
-export SNAKEMAKE_WORKSHOP_USER_DIR="/scratch/courses01/amsi/${USER}/snakemake"
+export SNAKEMAKE_WORKSHOP_USER_DIR="/scratch/courses01/${USER}/snakemake"
 
 # One-time Miniconda3 setup
 source "${SNAKEMAKE_WORKSHOP_SHARED_DIR}/miniconda3/etc/profile.d/conda.sh"
@@ -58,12 +58,11 @@ Instead, we'll copy a local conda environment to save time.**
 # AMSI Workshop installation method
 #####
 # Copy the Snakemake conda environment
-# TODO - Check ownership/permissions are correct
 mkdir --parents "${SNAKEMAKE_WORKSHOP_USER_DIR}/miniconda3/envs/"
 rsync --archive --info=progress2 \
   --chown ${USER}:${USER} \
   "${SNAKEMAKE_WORKSHOP_SHARED_DIR}/miniconda3/envs/snakemake" \
-  "${SNAKEMAKE_WORKSHOP_USER_DIR}/miniconda3/envs/snakemake"
+  "${SNAKEMAKE_WORKSHOP_USER_DIR}/miniconda3/envs/"
 ```
 
 # Hello, world! Example
@@ -76,6 +75,18 @@ Fist, lets get the code:
 cd "${SNAKEMAKE_WORKSHOP_USER_DIR}"
 git clone https://github.com/nathanhaigh/snakemake-hello-world
 cd snakemake-hello-world
+```
+
+Load/activate the Snakemake conda environment:
+
+```bash
+conda activate snakemake
+
+# Enable bash tab-autocompletion of Snakemake arguments
+complete -o bashdefault -C snakemake-bash-completion snakemake
+
+# Test Snakemake runs
+snakemake --version
 ```
 
 We can execute Snakemake and ask it to make the target file `Hello/world.txt`:
