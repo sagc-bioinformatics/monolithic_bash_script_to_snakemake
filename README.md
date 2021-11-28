@@ -154,6 +154,10 @@ Switch to the `step-1` branch:
 
 ```bash
 git checkout step-1
+
+# Update the profile submodule
+git submodule init
+git submodule update
 ```
 
 Create a file called `Snakefile`(capitalisation is important) and write a rule called `bwa_index` for performing the BWA indexing step.
