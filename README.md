@@ -61,6 +61,7 @@ Instead, we'll copy a local conda environment to save time.**
 # TODO - Check ownership/permissions are correct
 mkdir --parents "${SNAKEMAKE_WORKSHOP_USER_DIR}/miniconda3/envs/"
 rsync --archive --info=progress2 \
+  --chown ${USER}:${USER} \
   "${SNAKEMAKE_WORKSHOP_SHARED_DIR}/miniconda3/envs/snakemake" \
   "${SNAKEMAKE_WORKSHOP_USER_DIR}/miniconda3/envs/snakemake"
 ```
