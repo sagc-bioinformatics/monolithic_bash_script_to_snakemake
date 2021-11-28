@@ -131,9 +131,9 @@ The monolithic bash script ([scripts/monolithic_bash_script.sh]) performs the fo
 
  1. BWA indexes the reference genome
  2. Loops over 5 samples performing the following tasks:
-   1. FastQC of the read pairs
-   2. fastp trimming of read pairs
-   3. Alignes read pairs to the reference genome using BWA-mem
+    1. FastQC of the read pairs
+    2. fastp trimming of read pairs
+    3. Alignes read pairs to the reference genome using BWA-mem
  3. Aggregates FastQC results
 
 
